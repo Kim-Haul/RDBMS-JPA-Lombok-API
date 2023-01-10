@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @NoArgsConstructor // 기본생성자를 대신 생성해줍니다.
 @Entity // 테이블임을 나타냅니다.
-public class Course {
+public class Course extends  Timestamped {
 
     // JPA 는 SQL 을 쓰지 않고 데이터를 생성, 조회, 수정, 삭제할 수 있도록 해주는 번역기
     // Spring 에서 Domain 이 RDBMS 의 Table 과 1:1 대응, Repository 가 SQL 의 역할. (해당 영역의 코드가 JPA 코드를 사용하는 것과 똑같음)
