@@ -16,6 +16,9 @@ public class CourseService {
 
     // 생성자를 통해, Service 클래스를 만들 때 꼭 Repository 를 넣어주도록
     // 스프링에게 알려줌
+    // public CourseService(CourseRepository courseRepository) {
+    //      this.courseRepository = courseRepository;
+    // }
 
     @Transactional // SQL 쿼리가 일어나야 함을 스프링에게 알려줌 (이 어노테이션때문에 자동으로 DB에 반영)
     public Long update(Long id, Course course) {
