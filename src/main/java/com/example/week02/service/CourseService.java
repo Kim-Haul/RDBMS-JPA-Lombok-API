@@ -2,10 +2,12 @@ package com.example.week02.service;
 
 import com.example.week02.domain.Course;
 import com.example.week02.domain.CourseRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
+@RequiredArgsConstructor // lombok 을 통해 아래 생성자 자동 생성
 @Service // 스프링에게 이 클래스는 서비스임을 명시
 public class CourseService {
 
@@ -14,9 +16,9 @@ public class CourseService {
 
     // 생성자를 통해, Service 클래스를 만들 때 꼭 Repository를 넣어주도록
     // 스프링에게 알려줌
-    public CourseService(CourseRepository courseRepository) {
-        this.courseRepository = courseRepository;
-    }
+//    public CourseService(CourseRepository courseRepository) {
+//        this.courseRepository = courseRepository;
+//    }
 
     @Transactional // SQL 쿼리가 일어나야 함을 스프링에게 알려줌 (이 어노테이션때문에 자동으로 DB에 반영)
     public Long update(Long id, Course course) {

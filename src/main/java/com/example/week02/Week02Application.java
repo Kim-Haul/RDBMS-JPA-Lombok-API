@@ -34,22 +34,21 @@ public class Week02Application {
 //			}
 
             // 데이터 저장하기
-//            repository.save(new Course("프론트엔드의 꽃, 리액트", "김삿갓"));
+            repository.save(new Course("프론트엔드의 꽃, 리액트", "김삿갓"));
 
             // 데이터 전부 조회하기
-//            List<Course> courseList = repository.findAll();
-//            for (int i = 0; i < courseList.size(); i++) {
-//                Course course = courseList.get(i);
-//                System.out.println(course.getId());
-//                System.out.println(course.getTitle());
-//                System.out.println(course.getTutor());
-//            }
+            List<Course> courseList = repository.findAll();
+            for (int i = 0; i < courseList.size(); i++) {
+                Course course = courseList.get(i);
+                System.out.println(course.getId());
+                System.out.println(course.getTitle());
+                System.out.println(course.getTutor());
+            }
 
             // 데이터 하나 조회하기
-//            Course course = repository.findById(1L).orElseThrow(
-//                    () -> new IllegalArgumentException("해당 아이디가 존재하지 않습니다.")
-//            );
-
+            Course course = repository.findById(1L).orElseThrow(
+                    () -> new IllegalArgumentException("해당 아이디가 존재하지 않습니다.")
+            );
         };
     }
 }
