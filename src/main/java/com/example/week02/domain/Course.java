@@ -1,7 +1,7 @@
 package com.example.week02.domain;
 
-import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
+import javax.persistence.*;
 
 @NoArgsConstructor // 기본생성자를 대신 생성해줍니다.
 @Entity // 테이블임을 나타냅니다.
