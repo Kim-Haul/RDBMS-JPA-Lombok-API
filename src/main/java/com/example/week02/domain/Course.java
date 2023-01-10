@@ -37,4 +37,10 @@ public class Course extends  Timestamped {
         this.title = title;
         this.tutor = tutor;
     }
+
+    // 업데이트
+    public void update(Course course) {
+        this.title = course.title;
+        this.tutor = course.tutor;
+    }
 }
