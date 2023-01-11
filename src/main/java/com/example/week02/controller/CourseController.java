@@ -30,12 +30,17 @@ public class CourseController {
         // 잠시 뒤 새로운 생성자를 만듭니다.
         Course course = new Course(requestDto);
 
-        // JPA를 이용하여 DB에 저장하고, 그 결과를 반환합니다.
+        // JPA 를 이용하여 DB에 저장하고, 그 결과를 반환합니다.
         return courseRepository.save(course);
     }
 
     @GetMapping("/api/courses")
     public List<Course> getCourses() {
         return courseRepository.findAll();
+    }
+
+    @PutMapping("/api/courses/{id}")
+    public Long updateCourse(@PathVariable Long id, @RequestBody CourseRequestDto requestDto1) {
+        return courseService.update(id, requestDto1);
     }
 }
