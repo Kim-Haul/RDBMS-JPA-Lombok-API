@@ -40,7 +40,13 @@ public class CourseController {
     }
 
     @PutMapping("/api/courses/{id}")
-    public Long updateCourse(@PathVariable Long id, @RequestBody CourseRequestDto requestDto1) {
-        return courseService.update(id, requestDto1);
+    public Long updateCourse(@PathVariable Long id, @RequestBody CourseRequestDto requestDto) {
+        return courseService.update(id, requestDto);
+    }
+
+    @DeleteMapping("/api/courses/{id}")
+    public Long deleteCourse(@PathVariable Long id) {
+        courseRepository.deleteById(id);
+        return id;
     }
 }
